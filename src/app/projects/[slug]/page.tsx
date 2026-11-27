@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
 import Nav from "@/components/Nav";
-import { Gauge, Monitor } from "@/components/ProjectParts";
+import { Gauge, Monitor, Phones } from "@/components/ProjectParts";
 import { PROJECTS, bySlug } from "@/data/projects";
 import { PERSON } from "@/data/site";
 
@@ -61,6 +61,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
             <Monitor images={p.images} />
           </div>
+
+          {p.phones && (
+            <section className="pd-section">
+              <h2 className="engraved">On the Phone</h2>
+              <Phones items={p.phones} />
+            </section>
+          )}
 
           <section className="pd-section">
             <h2 className="engraved">Project Overview</h2>

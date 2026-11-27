@@ -17,6 +17,7 @@ export type Project = {
   flow: string[];
   stages?: { title: string; items: string[] }[];
   images: { src: string; cap: string }[];
+  phones?: { src: string; cap: string }[];
   metrics?: { title: string; intro: string; list: Metric[]; notes: { h: string; p: string }[] };
   closing?: string;
   links: { label: string; href: string; kind: "demo" | "repo" | "soon" }[];
@@ -620,7 +621,20 @@ export const PROJECTS: Project[] = [
       { title: "Validate", items: ["Row Level Security and triggers", "Per-form permission per user"] },
       { title: "Analyse", items: ["Live dashboard and Data QC", "Hub roll-up across sites"] },
     ],
-    images: [{ src: "cover-explo1", cap: "Offline-first data entry" }],
+    images: [
+      { src: "xp1-d1", cap: "Login with offline guest mode" },
+      { src: "xp1-d2", cap: "Drilling progress form" },
+      { src: "xp1-d3", cap: "Collar map with layers" },
+      { src: "xp1-d4", cap: "QAQC geochemistry dashboard" },
+      { src: "xp1-d5", cap: "Data QC issue register" },
+    ],
+    phones: [
+      { src: "xp1-p1", cap: "Sample register" },
+      { src: "xp1-p2", cap: "Menu" },
+      { src: "xp1-p3", cap: "Collar input" },
+      { src: "xp1-p4", cap: "Distribution hour" },
+      { src: "xp1-p5", cap: "Drilling progress" },
+    ],
     links: [{ label: "Public demo available soon", href: "", kind: "soon" }],
     related: [
       { slug: "exploration-pwa-v2", label: "Exploration PWA v2" },
@@ -663,7 +677,16 @@ export const PROJECTS: Project[] = [
       { title: "Analysis", items: ["Dashboard, Data QC, Peta with layer upload"] },
       { title: "3D", items: ["three.js loads only when the 3D tab opens"] },
     ],
-    images: [{ src: "cover-explo2", cap: "3D Hole and dashboard" }],
+    images: [
+      { src: "xp2-d1", cap: "3D Hole view" },
+      { src: "xp2-d2", cap: "Login" },
+    ],
+    phones: [
+      { src: "xp2-p3", cap: "Login" },
+      { src: "xp2-p4", cap: "Drilling progress" },
+      { src: "xp2-p1", cap: "Collar input" },
+      { src: "xp2-p2", cap: "As-built GPS" },
+    ],
     links: [{ label: "Private project (login required)", href: "", kind: "soon" }],
     related: [
       { slug: "exploration-pwa-v1", label: "Exploration PWA v1" },
@@ -834,7 +857,7 @@ export const CARDS: Card[] = [
     cat: "data",
     title: "Exploration PWA v1",
     text: "Offline-first drilling data entry for geologists: collars, progress, hours and samples saved on the phone and synced when signal returns.",
-    img: "cover-explo1",
+    img: "xp1-d5",
     href: "/projects/exploration-pwa-v1/",
     tech: ["Vanilla JS", "Dexie", "Supabase"],
   },
@@ -843,7 +866,7 @@ export const CARDS: Card[] = [
     cat: "data",
     title: "Exploration PWA v2",
     text: "Next.js rebuild inside the portal with dynamic forms, Data QC, collar map and a 3D drill hole view.",
-    img: "cover-explo2",
+    img: "xp2-d1",
     href: "/projects/exploration-pwa-v2/",
     tech: ["Next.js", "three.js", "Supabase"],
   },

@@ -51,6 +51,48 @@ export function Monitor({ images }: { images: { src: string; cap: string }[] }) 
   );
 }
 
+/* ---------- phone frames ---------- */
+export function Phones({ items }: { items: { src: string; cap: string }[] }) {
+  const [open, setOpen] = useState<number | null>(null);
+  useEffect(() => {
+    if (open === null) return;
+    const h = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [open]);
+  const cur = open === null ? null : items[open];
+  return (
+    <>
+      <div className="phones">
+        {items.map((it, n) => (
+          <figure className="phone-fig" key={it.src}>
+            <button className="phone" onClick={() => { setOpen(n); click(); }} aria-label={`Open ${it.cap}`}>
+              <span className="cam" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`/img/${it.src}.jpg`} alt={it.cap} loading="lazy" />
+            </button>
+            <figcaption>{it.cap}</figcaption>
+          </figure>
+        ))}
+      </div>
+      {cur && (
+        <Portal>
+          <div className="lightbox" onClick={() => setOpen(null)} role="dialog" aria-modal="true" aria-label={cur.cap}>
+            <button className="iconkey lb-x" onClick={() => setOpen(null)} aria-label="Close"><X size={18} /></button>
+            <div className="lb-card phone-lb" onClick={(e) => e.stopPropagation()}>
+              <div className="phone big"><span className="cam" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`/img/${cur.src}.jpg`} alt={cur.cap} />
+              </div>
+              <div className="t"><b>{cur.cap}</b></div>
+            </div>
+          </div>
+        </Portal>
+      )}
+    </>
+  );
+}
+
 /* ---------- analog gauge ---------- */
 export function Gauge({ m }: { m: Metric }) {
   const ref = useRef<SVGSVGElement>(null);
