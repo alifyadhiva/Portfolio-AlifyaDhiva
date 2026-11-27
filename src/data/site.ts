@@ -27,7 +27,7 @@ export const PERSON = {
 };
 
 export const STATS = [
-  { value: 5, suffix: "+", label: "Featured Projects", icon: "folder" },
+  { value: 10, suffix: "+", label: "Featured Projects", icon: "folder" },
   { value: 0, text: "Database & ETL", label: "Systems", icon: "db" },
   { value: 0, text: "GIS & WebGIS", label: "Applications", icon: "layers" },
   { value: 2, suffix: "+ Years", label: "Professional Experience", icon: "trend" },
@@ -201,14 +201,14 @@ export const CERTS = {
       event: "Joint Convention Pangkalpinang 2023",
       what: "Paper Presenter",
       detail: "A Novel Approach in Estimating Coal Resources Using Machine Learning Algorithm",
-      img: "poster2",
+      img: "mgei2",
     },
     {
       event: "MGEI 14th Annual Convention 2022",
       what: "Student Research Poster Contest",
       detail:
         "Re-evaluating the Ex-Colonial Gold Mining: Study of Gold Mineralization Potential in Lebong Tandai, North Bengkulu, Indonesia",
-      img: "mgei2",
+      img: "poster2",
     },
   ],
   papers: [

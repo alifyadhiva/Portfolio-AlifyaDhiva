@@ -53,7 +53,7 @@ export default function Hero() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/img/portrait.jpg" alt="Alifya Awalia Dhiva" width={900} height={1125} />
               </div>
-              <figcaption className="plate">Alifya Awalia Dhiva · Geologist</figcaption>
+              <figcaption className="plate"><strong>Alifya Dhiva</strong><span>Geologist | Data Engineer</span></figcaption>
             </figure>
           </div>
         </div>
