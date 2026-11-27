@@ -537,17 +537,17 @@ export const PROJECTS: Project[] = [
   {
     slug: "opd-integrated",
     cat: "data",
-    title: "One Portal Data (OPD) Integrated PWA",
+    title: "Integrated Data System Portal",
     kicker: "One login for production, exploration and head-office data",
     lead: [
       "One installable web app (PWA) where a single sign-in opens every site and module.",
-      "OPD brings daily production data, offline-first exploration data entry and head-office views behind one address, so teams stop switching between separate tools and logins.",
+      "The portal brings daily production data, offline-first exploration data entry and head-office views behind one address, so teams stop switching between separate tools and logins.",
     ],
     tech: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Dexie", "PWA"],
     meta: {
       industry: "Mining",
       type: "Progressive Web App (multi-site portal)",
-      status: "Portfolio Project - Live",
+      status: "NDA Internal Project",
       role: "Data Engineer & Full-stack Developer",
     },
     overview:
@@ -570,12 +570,14 @@ export const PROJECTS: Project[] = [
       { title: "Exploration", items: ["Dexie local database per site, outbox sync", "Dashboard, Data QC, Peta and 3D Hole need internet"] },
       { title: "Delivery", items: ["Static export on Vercel", "Service worker with versioned cache and update prompt"] },
     ],
-    images: [{ src: "cover-opd", cap: "One Portal Data landing and portal" }],
-    closing: "Built to be fully functional while staying a non-commercial portfolio project.",
-    links: [
-      { label: "Open Live App", href: "https://opd-integrated.vercel.app", kind: "demo" },
-      { label: "GitHub Repository", href: "https://github.com/mmengineering-web/OPD-Integrated", kind: "repo" },
+    images: [
+      { src: "ids-home", cap: "Landing page: one login for every site and module" },
+      { src: "ids-mod", cap: "Module overview: Exploration, Production, Documents, Tools and Portal" },
+      { src: "ids-form", cap: "Offline-first exploration data entry (guest mode)" },
+      { src: "ids-tools", cap: "Tools: calculators that run in the browser" },
     ],
+    closing: "Built to be fully functional while staying a non-commercial portfolio project.",
+    links: [{ label: "Private project (login required)", href: "", kind: "soon" }],
     related: [
       { slug: "exploration-pwa-v2", label: "Exploration PWA v2" },
       { slug: "pdca-dashboard", label: "Interactive PDCA Dashboard" },
@@ -622,23 +624,23 @@ export const PROJECTS: Project[] = [
     links: [{ label: "Public demo available soon", href: "", kind: "soon" }],
     related: [
       { slug: "exploration-pwa-v2", label: "Exploration PWA v2" },
-      { slug: "opd-integrated", label: "OPD Integrated PWA" },
+      { slug: "opd-integrated", label: "Integrated Data System Portal" },
     ],
   },
   {
     slug: "exploration-pwa-v2",
     cat: "data",
     title: "Exploration Data Entry PWA v2",
-    kicker: "Next.js rebuild inside One Portal Data",
+    kicker: "Next.js rebuild inside the Integrated Data System Portal",
     lead: [
-      "A side-by-side rebuild of the exploration app on a modern stack, now running behind the OPD portal login.",
+      "A side-by-side rebuild of the exploration app on a modern stack, now running behind the portal login.",
       "Same offline-first behaviour and data model, with a redesigned interface, a command palette and a 3D drill hole view.",
     ],
     tech: ["Next.js 16", "React 19", "Tailwind v4", "three.js", "Dexie", "Supabase"],
     meta: {
       industry: "Mining Exploration",
       type: "Progressive Web App (Next.js static export)",
-      status: "Portfolio Project - Live inside OPD",
+      status: "NDA Internal Project",
       role: "Data Engineer & Full-stack Developer",
     },
     overview:
@@ -662,13 +664,10 @@ export const PROJECTS: Project[] = [
       { title: "3D", items: ["three.js loads only when the 3D tab opens"] },
     ],
     images: [{ src: "cover-explo2", cap: "3D Hole and dashboard" }],
-    links: [
-      { label: "Open in OPD", href: "https://opd-integrated.vercel.app", kind: "demo" },
-      { label: "GitHub Repository", href: "https://github.com/mmengineering-web/OPD-Integrated", kind: "repo" },
-    ],
+    links: [{ label: "Private project (login required)", href: "", kind: "soon" }],
     related: [
       { slug: "exploration-pwa-v1", label: "Exploration PWA v1" },
-      { slug: "opd-integrated", label: "OPD Integrated PWA" },
+      { slug: "opd-integrated", label: "Integrated Data System Portal" },
     ],
   },
   {
@@ -677,7 +676,7 @@ export const PROJECTS: Project[] = [
     title: "Interactive PDCA Dashboard",
     kicker: "Production monitoring built on Plan, Do, Check, Act",
     lead: [
-      "The newest production dashboard, built natively inside OPD and reading live from the database.",
+      "The newest production dashboard, built natively inside the portal and reading live from the database.",
       "It turns daily data into verdicts, causes and actions, so management sees not only what happened but what to do next.",
     ],
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Supabase", "SQL"],
@@ -717,17 +716,17 @@ export const PROJECTS: Project[] = [
         { h: "Bridges", p: "Stock, fuel and headcount bridges show what the daily rows do not explain." },
       ],
     },
-    links: [{ label: "Available inside OPD (login required)", href: "", kind: "soon" }],
+    links: [{ label: "Available inside the portal (login required)", href: "", kind: "soon" }],
     related: [
       { slug: "mining-operations-monitoring", label: "Monitoring Platform" },
-      { slug: "opd-integrated", label: "OPD Integrated PWA" },
+      { slug: "opd-integrated", label: "Integrated Data System Portal" },
     ],
   },
   {
     slug: "daily-report-etl",
     cat: "data",
-    title: "Daily Report ETL App",
-    kicker: "From site reports to verified master workbooks",
+    title: "Production Data ETL Manager",
+    kicker: "Daily Report ETL: from site reports to verified master workbooks",
     lead: [
       "A local app that reads each site's daily report, maps it to the master workbook tables, checks it against history and loads it safely through Excel.",
       "Every load is backed up and verified cell by cell, then the saved master can be uploaded to the site's database.",
@@ -759,7 +758,13 @@ export const PROJECTS: Project[] = [
       { title: "Load", items: ["Block load: 193 s versus over 30 min row by row (one month test)"] },
       { title: "Verify", items: ["20,157 cells compared after load, 0 differences"] },
     ],
-    images: [{ src: "cover-etl", cap: "Five-step ETL wizard" }],
+    images: [
+      { src: "dretl1", cap: "Step 1: choose the site and its master workbook" },
+      { src: "dretl2", cap: "Step 2: drop the daily report files" },
+      { src: "dretl3", cap: "Step 3: review checks, errors and warnings per table" },
+      { src: "dretl4", cap: "Step 4: back up, save to the master and verify" },
+      { src: "dretl5", cap: "Step 5: upload to the site database with upload history" },
+    ],
     metrics: {
       title: "Load Performance",
       intro: "Block loading through Excel replaced row-by-row writes on a one-month replace test.",
@@ -818,9 +823,9 @@ export const CARDS: Card[] = [
   {
     id: "opd",
     cat: "data",
-    title: "One Portal Data (OPD) PWA",
+    title: "Integrated Data System Portal",
     text: "One installable app with a single login for production, exploration and head-office data across mining sites, with an offline-first field app built in.",
-    img: "cover-opd",
+    img: "ids-home",
     href: "/projects/opd-integrated/",
     tech: ["Next.js", "Supabase", "PWA"],
   },
@@ -837,7 +842,7 @@ export const CARDS: Card[] = [
     id: "explo2",
     cat: "data",
     title: "Exploration PWA v2",
-    text: "Next.js rebuild inside OPD with dynamic forms, Data QC, collar map and a 3D drill hole view.",
+    text: "Next.js rebuild inside the portal with dynamic forms, Data QC, collar map and a 3D drill hole view.",
     img: "cover-explo2",
     href: "/projects/exploration-pwa-v2/",
     tech: ["Next.js", "three.js", "Supabase"],
@@ -854,9 +859,9 @@ export const CARDS: Card[] = [
   {
     id: "dretl",
     cat: "data",
-    title: "Daily Report ETL App",
+    title: "Production Data ETL Manager",
     text: "Reads site daily reports, validates them against history and loads the Excel master safely with full cell-by-cell verification.",
-    img: "cover-etl",
+    img: "dretl2",
     href: "/projects/daily-report-etl/",
     tech: ["Python", "Excel COM", "Supabase"],
   },
