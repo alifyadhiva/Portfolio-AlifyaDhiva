@@ -729,7 +729,13 @@ export const PROJECTS: Project[] = [
       { title: "Check", items: ["Verdicts: achieved, on pace, behind pace, below plan, no plan"] },
       { title: "Act", items: ["Ranked actions from the gaps"] },
     ],
-    images: [{ src: "cover-pdca", cap: "Interactive PDCA dashboard" }],
+    images: [
+      { src: "pdca3", cap: "Overview and plan-do-check-act summary" },
+      { src: "pdca2", cap: "Cumulative plan vs actual and site status" },
+      { src: "pdca4", cap: "Plan by site and daily result" },
+      { src: "pdca5", cap: "Availability, utilization and lost hours" },
+      { src: "pdca1", cap: "All tables explorer" },
+    ],
     metrics: {
       title: "Production Plan to Actual Waterfall",
       intro: "A bridge from plan to actual that splits the gap into rain, slippery, other delays, availability and productivity, so the chart always closes on the actual figure.",
@@ -875,7 +881,7 @@ export const CARDS: Card[] = [
     cat: "data",
     title: "Interactive PDCA Dashboard",
     text: "Newest production dashboard organised by Plan, Do, Check and Act, with verdicts, a plan-to-actual waterfall and ranked actions.",
-    img: "cover-pdca",
+    img: "pdca3",
     href: "/projects/pdca-dashboard/",
     tech: ["Next.js", "PostgreSQL", "SQL"],
   },
