@@ -34,6 +34,14 @@ export default function Nav({ home = false }: { home?: boolean }) {
     return () => io.disconnect();
   }, [home]);
 
+  const goTop = (e: React.MouseEvent) => {
+    if (!home) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    history.replaceState(null, "", "/");
+    setActive("home");
+  };
+
   const toggleSound = () => {
     const n = !snd;
     setSnd(n);
@@ -45,7 +53,7 @@ export default function Nav({ home = false }: { home?: boolean }) {
     <header className="nav">
       <div className="wrap">
         <div className="nav-bar">
-          <Link href="/" className="brand" aria-label="Home">
+          <Link href="/" className="brand" aria-label="Home" onClick={goTop}>
             <span className="brand-mono leather">AAD</span>
             <span>
               <span className="brand-name">{PERSON.name}</span>
@@ -59,7 +67,8 @@ export default function Nav({ home = false }: { home?: boolean }) {
                 key={id}
                 href={id === "home" ? "/" : `/#${id}`}
                 className={`navkey ${home && active === id ? "active" : ""}`}
-                onClick={() => {
+                onClick={(e) => {
+                  if (id === "home") goTop(e);
                   click("tick");
                   setOpen(false);
                 }}

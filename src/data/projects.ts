@@ -953,7 +953,7 @@ export const CARDS: Card[] = [
     cat: "gis",
     title: "Site Suitability Analysis",
     text: "GIS-based suitability analysis for evaluating and ranking potential sites using spatial and environmental criteria.",
-    img: "gis1",
+    img: "suit",
     href: "/projects/gis-geology/",
     tech: ["ArcGIS", "QGIS"],
   },
